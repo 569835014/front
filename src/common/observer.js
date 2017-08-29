@@ -32,7 +32,6 @@ const Observer = {
         this.handles[eventName][i].apply(this,arr);
       }
     }
-    this.handles[eventName]=[];
   }
 };
 const Ob={}

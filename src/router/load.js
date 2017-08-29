@@ -7,7 +7,7 @@ function load (url,component) {//按需加载组件
 
 
 }
-export  function pageLoad(url,component) {
+export  function pageLoad(url,component) {//按需加载路由组件，判断组件存不存在不存在用Preparation替代
   let _router=url||'components';
   let page=component+'.vue';
   if(arr.indexOf(page)>=0){
@@ -17,34 +17,4 @@ export  function pageLoad(url,component) {
   }
 
 }
-// export function  loadTry(url) {
-//
-//    const component = resolve => {
-//     // require.ensure 是 Webpack 的特殊语法，用来设置 code-split point
-//     // （代码分块）
-//
-//      try{
-//        // console.info("window.require.ensure(['"+url+"'],function(){window.resolve(window.require('"+url+"'))})")
-//        require.ensure([`${url}`],function(){resolve()})
-//        // require.ensure([url], () => {
-//        //
-//        //   resolve(require(`${url}`));
-//        // })
-//       // new Function("window.require.ensure(['"+url+"'],function(){window.resolve(window.require('"+url+"'))})");
-//        // require.ensure([url],function () {
-//        //   resolve(require(url));
-//        // });
-//
-//      }catch (e){
-//        console.info(e);
-//        require.ensure(['../view/other/Preparation.vue'], () => {
-//
-//          resolve(require("../view/other/Preparation.vue"));
-//        })
-//      }
-//
-//   }
-//   return component
-// }
-
 export default load
