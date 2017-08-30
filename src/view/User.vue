@@ -24,7 +24,6 @@
   import { mapGetters } from 'vuex'
   import { mapActions } from 'vuex'
   import Service from '../service/about/about'
-  import mixin from '../mixins/mixin.js'
   export default {
     name: 'hello',
     data () {
@@ -69,7 +68,6 @@
         user:'userInfo'
       })
     },
-    mixins:[mixin]
   }
 </script>
 

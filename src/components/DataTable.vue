@@ -1,6 +1,12 @@
 <template>
     <div class="data-table">
       <div class="options clearfix">
+        <div class="searchDom" v-if="searchDom">
+          <slot name="search" >
+            <Input  icon="search" v-model="search" placeholder="请输入..." style="width: 200px" @on-change="queryOfSearch"></Input>
+          </slot>
+        </div>
+
         <div class="options-left">
           <router-link :to="link">
             <slot name="add">
@@ -8,22 +14,26 @@
             </slot>
 
           </router-link>
+          <span @click="searchDom=!searchDom">
+              <slot name="searchBtn" >
+            <Button type="primary" icon="search" >搜索信息</Button>
+          </slot>
+          </span>
 
         </div>
         <div class="options-right" slot="options">
           <Icon type="refresh" :size="20" color="rgb(189,197,213)" @click.native="refresh" ></Icon>
           <Icon type="document-text"  :size="20" color="rgb(189,197,213)"></Icon>
           <Icon type="navigate"  :size="20" color="rgb(189,197,213)"></Icon>
-          <Select v-model="select" multiple style="width:20px" class="table-columns" >
+          <Select v-model="select" multiple style="width:20px" class="table-columns table-select" >
             <Option key="1" value="1">
               <Checkbox-group v-model="fruit" >
-
                 <Checkbox :label="item.value" v-for="(item,index) in attrs" :key="index" :disabled="fruit.length===1&&fruit[0]===item.value">{{item.label}}</Checkbox>
               </Checkbox-group>
             </Option>
           </Select>
 
-          <Input  icon="search" v-model="search" placeholder="请输入..." style="width: 200px" @on-change="queryOfSearch"></Input>
+
         </div>
 
       </div>
@@ -44,6 +54,7 @@
           select:[],
           fruit:[],
           search:"",
+          searchDom:false,
         }
       },
       created(){
@@ -143,6 +154,7 @@
 <style  lang="stylus">
   .table-columns{
     width auto;
+
     .ivu-checkbox-group-item{
       display block;
       /*float left*/
@@ -184,11 +196,18 @@
     .ivu-select-placeholder{
       display none !important
     }
+
   }
-
-    .ivu-tag-text
+  .table-columns
+      .ivu-tag-text
         display none
-     .ivu-select-dropdown
-       width 150px !important
+      .ivu-select-dropdown
+        width 150px !important
 
+</style>
+<style lang="stylus" scoped>
+  .searchDom
+    margin-bottom 18px
+    padding 20px
+    background rgb(247,248,248)
 </style>

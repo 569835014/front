@@ -1,5 +1,5 @@
 <template>
-    <div class="">PeriodList</div>
+    <div class="">StatisticsStatisticsByTeacher</div>
 </template>
 <script>
   import {mapActions} from 'vuex'

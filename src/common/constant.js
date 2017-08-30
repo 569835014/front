@@ -10,3 +10,19 @@ const KEEP="KEEP";//快捷导航
 const BREADCRUMB="BREADCRUMB";
 const ACTIVE_MENU="ACTIVE_MENU";
 export {USER_INFO,SESSIONSTORAGE,LOCALSTORAGE,BASE_URL,KEEP,BREADCRUMB,ACTIVE_MENU}
+var a={
+  "code": "S0001",
+  "msg": "",
+  "data": {
+    "list|10": [{
+      "id": "@id()",
+      "depName": "@string()",
+      "remarks": "@csentence(3,10)"
+    }],
+    "paging": {
+      "pageSize": 1,
+      "pageNum": 10,
+      "total": 100
+    }
+  }
+}

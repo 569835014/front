@@ -24,6 +24,7 @@
 <script>
   import Service from '../../service/home/home'
   import echarts from 'echarts'
+//  import mixin from '../../mixins/mixin'
   export default {
     data () {
       return {

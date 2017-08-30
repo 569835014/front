@@ -23,7 +23,6 @@ class Session{
 }
 const storage={};
  storage.install = function (Vue, type) {
-  // 4. 添加实例方法
   Vue.prototype.$storage = new Session(type)
 };
 const session =new Session();

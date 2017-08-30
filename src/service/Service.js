@@ -161,7 +161,6 @@ class Service {
       Service.isinIt=true;
     }
   }
-
 }
 Service.isinIt=false;
 export default Service

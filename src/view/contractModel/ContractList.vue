@@ -1,5 +1,5 @@
 <template>
-    <div class="">ContractList</div>
+  <div class="">ContractList</div>
 </template>
 <script>
   export default {

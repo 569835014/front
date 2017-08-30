@@ -1,19 +1,19 @@
 <template>
-    <div class="class-room-list">
+  <div class="class-room-list">
 
-    </div>
+  </div>
 </template>
 <script>
-    export default {
-      data(){
-        return{
-          res:{}
-        }
-      },
-      mounted(){
-
+  export default {
+    data(){
+      return{
+        res:{}
       }
+    },
+    mounted(){
+
     }
+  }
 </script>
 <style scoped>
 </style>

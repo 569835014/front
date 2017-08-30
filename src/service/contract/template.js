@@ -9,7 +9,7 @@ class Template extends Service{
       url:"contractManage/templateList",
       method:"get",
       success:(res)=>{
-        let json=res.data
+        let json=res.data;
         this.vm.list=json.list;
         this.vm.paging=json.paging;
       }

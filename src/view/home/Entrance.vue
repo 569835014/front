@@ -1,37 +1,37 @@
 
 <template>
-   <div class="home">
+  <div class="home">
 
-     <section>
-       <div class="options clearfix">
-         <div class="options-left">
-           <router-link :to="{name:'homeEdit',params: { id: 'new' }}">
-             <Button type="primary" icon="plus">添加会员</Button>
-           </router-link>
+    <section>
+      <div class="options clearfix">
+        <div class="options-left">
+          <router-link :to="{name:'homeEdit',params: { id: 'new' }}">
+            <Button type="primary" icon="plus">添加会员</Button>
+          </router-link>
 
-         </div>
-         <div class="options-right">
-           <Icon type="refresh" :size="20" color="rgb(189,197,213)" @click.native="refresh"></Icon>
-           <Icon type="document-text"  :size="20" color="rgb(189,197,213)"></Icon>
-           <Icon type="navigate"  :size="20" color="rgb(189,197,213)"></Icon>
-           <Icon type="grid"  :size="20" color="rgb(189,197,213)"></Icon>
-           <Input  icon="search" placeholder="请输入..." style="width: 200px"></Input>
-         </div>
+        </div>
+        <div class="options-right">
+          <Icon type="refresh" :size="20" color="rgb(189,197,213)" @click.native="refresh"></Icon>
+          <Icon type="document-text"  :size="20" color="rgb(189,197,213)"></Icon>
+          <Icon type="navigate"  :size="20" color="rgb(189,197,213)"></Icon>
+          <Icon type="grid"  :size="20" color="rgb(189,197,213)"></Icon>
+          <Input  icon="search" placeholder="请输入..." style="width: 200px"></Input>
+        </div>
 
-       </div>
-       <Table  border  :columns="columns" :data="currentList" ></Table>
-       <div style="margin: 10px;overflow: hidden" class="page">
-         <div style="float: left;line-height: 32px">显示第 {{paging.pageSize}} 页共 {{paging.totalPage}} 页记录，总共 {{paging.total}} 条记录</div>
-         <div style="float: right;">
-           <Page :total="paging.total" :current="outPut.pageSize" @on-change="changePage"></Page>
-         </div>
-       </div>
-     </section>
-   </div>
+      </div>
+      <Table  border  :columns="columns" :data="currentList" ></Table>
+      <div style="margin: 10px;overflow: hidden" class="page">
+        <div style="float: left;line-height: 32px">显示第 {{paging.pageSize}} 页共 {{paging.totalPage}} 页记录，总共 {{paging.total}} 条记录</div>
+        <div style="float: right;">
+          <Page :total="paging.total" :current="outPut.pageSize" @on-change="changePage"></Page>
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 <script>
   import Service from '../../service/home/home'
-//  import mixin from '../../mixins/mixin.js'
+  //  import mixin from '../../mixins/mixin'
   export default {
     data () {
       return {
@@ -165,7 +165,7 @@
         this.outPut.pageNum=10
       },
       screen(key){
-       this.list=this.copyList.filter((item)=>{
+        this.list=this.copyList.filter((item)=>{
 
           return item[key].indexOf(this.screenPar[key])>=0;
         });

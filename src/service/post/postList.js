@@ -27,3 +27,16 @@ class PostLis extends Service{
   }
 }
 export default new PostLis();
+var pro = new Proxy({
+  add: function (val) {
+    return val + 10;
+  },
+  name: 'I am Jspang'
+}, {
+  get:function(target,key,property){
+    console.log('come in Get');
+    return target[key];
+  }
+});
+
+console.log(pro.add(100));

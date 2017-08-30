@@ -6,6 +6,7 @@
         </Form-item>
         <Form-item label="门店:">
           <Select >
+
             <Option value="门店" key="门店">门店</Option>
           </Select>
         </Form-item>
@@ -21,6 +22,7 @@
 </template>
 <script>
   import Service from '../../service/post/modify'
+  import modify from '../../mixins/modify'
   export default {
     data () {
       return {
@@ -33,23 +35,13 @@
     },
     created(){
       Service.init(this);
-      if(this.$route.params.id!=='add'&&!this.$route.params.item){
-        this.$router.push({
-          'name':"postList"
-        })
-      }else{
-        if(this.$route.params.item){
-          this.item=this.$route.params.item;
-          this.index=this.$route.params.index;
-        }
-
-      }
     },
     methods:{
       submit(){
         Service.modify();
       }
-    }
+    },
+    mixins:[modify]
   }
 </script>
 <style scoped lang="stylus">

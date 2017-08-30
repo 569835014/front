@@ -2,7 +2,11 @@
     <div class="">CourseList</div>
 </template>
 <script>
-    export default {}
+  import {mapActions} from 'vuex'
+  import mixin from '../../mixins/mixin'
+  export default {
+    mixins:[mixin]
+  }
 </script>
 <style scoped>
 </style>
